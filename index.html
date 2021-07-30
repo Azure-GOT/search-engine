@@ -7,7 +7,6 @@
 <body>
 <h1>Speech to Text Converter</h1>
 <h5>Google Chrome or Firefox Recommeded ,Chrome priority one</h5>
-
 <!-- contenteditable means speech converted text can be editable-->
        <div class ="words" contenteditable>
 
@@ -29,6 +28,7 @@
                 recognition.interimResults=true;
                 recognition.onstart = function(){
                 action.innerHTML="started ,please speak";
+                action1.innerHTML=" ";
                 //recognition.start();
                 }
 
@@ -77,10 +77,20 @@
             //this is for stop recording
                // ('#pause').on('click', function(e) {
                 //recognition.stop()});
+
+                pause.onclick = function() {
+                    recognition.abort();
+                    console.log('Speech recognition aborted.');
+                    action1.innerHTML="stopped Recording ,";
+                    action.innerHTML=" ";
+}
+
                 recognition.onspeechend=function(){
-                action.innerHTML="stopped Recording ,";
-                recognition.stop();
+                        action.innerHTML=" ";
+                        recognition.stop();
                 }
+
+
 
             }
         </script>
