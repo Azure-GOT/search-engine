@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>SpeechtoText</title>
-<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />   
+    
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,12 +30,29 @@ input {
   opacity: 0.9;
   border-radius: 4px;
 }
-
 input:hover {
   background-color: Green;
   border-radius: 4px;
   opacity: 40;
 }
+
+button {
+  background-color: Blue;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 4px;
+}
+button:hover {
+  background-color: Green;
+  border-radius: 4px;
+  opacity: 40;
+}
+
 
 textarea {
   width: 100%;
@@ -66,6 +83,8 @@ textarea {
         
         
         <textarea id="speechtotext" name="speech1"></textarea>
+        
+<button onclick="copyEmbedCode()">Copy Embed Code</button>
       
 
 <!--<p id ="speechtotext"></p>-->
@@ -74,6 +93,14 @@ textarea {
 </div>
 
 <script>
+function copyEmbedCode() {
+  var copyText = document.getElementById("speechtotext");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+}
+
             function TextSpeech(){
                 //var speech=true;
                 var action1=document.getElementById('action1')
