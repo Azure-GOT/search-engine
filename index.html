@@ -2,53 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>text-to-speech Conversion</title>
+    <title>SpeechtoText</title>
 </head>
-<body><center>
-<!--<script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>-->
-      /*
-  sign in to the https://app.responsivevoice.org/ and get js file for text to speech and insert in ur html file
-
-  */
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=7cMZznzE"></script>
-<h2>Text to Speech conversion in English</h2>
-    <!--it will create box item to enter the text -->
- <textarea id="text" rows="5" cols="50" name="text"></textarea><br><br>
-    <!-- clicking to submit buutton after typing test in box -->
-  <input type="button" onclick="texttospeech()" value="submit">
-
-   <h1>Speech to Text Converter</h1>
+<body>
+<h1>Speech to Text Converter</h1>
 <!-- contenteditable means speech converted text can be editable-->
        <div class ="words" contenteditable>
 
-        <input onclick="TextSpeech()" type="button" value="click here and speak "><br><br>
+           <input onclick="TextSpeech()" id="p" type="button" value="click here and speak "> &nbsp; <span id ="action"></span><br><br>
+        <input onclick="TextSpeech()" id="pause" type="button" value="click here stop "><span id ="action1"></span><br><br>
         <textarea id="speechtotext" rows="5" cols="100" name="speech1"></textarea><br><br>
 
 <!--<p id ="speechtotext"></p>-->
        </div>
 
-</center>
-
-<!-- script for texttospeech-->
 <script>
-function texttospeech(){
-//assigning the text what u enter to the text variable
-var text=document.getElementById("text").value;
-//document.write(text);
-//this can speak out what we enter in text
-responsiveVoice.speak(text);
-}
-</script>
-
- <script>
             function TextSpeech(){
-                var speech=true;
+                //var speech=true;
+                var action1=document.getElementById('action1')
                 //this a inbuilt for speech recognition
                 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
                 //when speech recognised and its values assigned to constant recognition
                 const recognition = new SpeechRecognition();
                 recognition.interimResults=true;
+                recognition.onstart = function(){
+                action.innerHTML="started ,please speak";
+                //recognition.start();
+                }
+
                 // When true, the silence period is longer (about 15 seconds),
+                let speechtotext = document.createElement("speechtotext")
+
                 // allowing us to keep recording even when the user pauses.
                 recognition.continuous = true;
 
@@ -57,8 +41,17 @@ responsiveVoice.speak(text);
                 words.appendChild(speechtotext);
                 //whenever there is change in input it will listen and displayed on id of speechtotext
                 recognition.addEventListener('result',e => {
-                const transcript = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('')
+                const transcript = Array.from(e.results)
+                .map(result => result[0])
+                .map(result => result.transcript)
+                .join('')
                 document.getElementById("speechtotext").innerHTML = transcript;
+                //speechtotext.textcontent=transcript;
+                if(e.results[0].isFinal){
+                speechtotext=document.createElement("speechtotext");
+                words.appendChild(speechtotext);
+
+                }
                 //it will show the results in transcript
                 console.log(transcript);
                 localStorage.setItem("text1" ,transcript );
@@ -66,13 +59,37 @@ responsiveVoice.speak(text);
                 var retrievedUsername = localStorage.getItem("text1");
                 console.log(retrievedUsername);
                 });
-                if(speech == true){
+                //if(speech == true){
                 //if speech is there ,it starts displaying and if speech end ,it will prompts as end in console if u observe
+
+                //recognition.addEventListener('end',recognition.start);
+                //recognition.start();
+                //}
                 recognition.start();
-                recognition.addEventListener('end',recognition.start);
+
+
+                //recognition.onspeechend = function() {
+                //recognition.stop();
+                //console.log('Speech recognition has stopped.');}
+
+            //this is for stop recording
+               // ('#pause').on('click', function(e) {
+                //recognition.stop()});
+                recognition.onspeechend=function(){
+                action.innerHTML="stopped Recording ,";
+                recognition.stop();
                 }
 
             }
         </script>
+//<script>
+   //function speechstop(){
+   //var recognition = new SpeechRecognition();
+   //recognition.onspeechend = function() {
+         // recognition.stop();
+          //console.log('Speech recognition has stopped.');}}
+
+//</script>
+
 </body>
 </html>
