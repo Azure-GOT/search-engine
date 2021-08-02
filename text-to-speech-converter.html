@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpeechtoText</title>
+    
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">    
+    
+</head>
+
+<style>
+
+body{
+  background-position: center;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/002/376/362/original/abstract-lines-and-dots-digital-technology-background-loop-4k-animation-of-an-abstract-technology-background-with-moving-lines-and-dots-for-network-digital-data-concept-and-communication-seamless-looping-video.jpg");
+  min-height: 100%;
+}
+
+input {
+  background-color: Blue;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 4px;
+}
+input:hover {
+  background-color: Green;
+  border-radius: 4px;
+  opacity: 40;
+}
+
+button {
+  background-color: Blue;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 4px;
+}
+button:hover {
+  background-color: Green;
+  border-radius: 4px;
+  opacity: 40;
+}
+
+
+textarea {
+  width: 100%;
+  height: 210px;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+</style>
+
+
+
+<body>
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="Embed-Tool">
+<h1 style="color:white;"><center>Speech to Text Converter</center></h1>
+<h5 style="color:white;"><b>Note:</b> Google Chrome or Firefox Recommended ,Chrome priority one</h5>
+
+<!-- contenteditable means speech converted text can be editable-->
+<div class ="words" contenteditable>
+
+<input onclick="TextSpeech()" id="p" type="button" value="Click here and Speak "> &nbsp; <span id ="action"></span>
+
+        <input onclick="TextSpeech()" id="pause" type="button" value="Click here to Stop"><span id ="action1"></span><br><br>
+        
+        
+        <textarea id="speechtotext" name="speech1"></textarea>
+        
+<button onclick="copyEmbedCode()">Copy Embed Code</button>
+      
+
+<!--<p id ="speechtotext"></p>-->
+ </div>
+ 
+</div>
+
+<script>
+function copyEmbedCode() {
+  var copyText = document.getElementById("speechtotext");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+}
+
+            function TextSpeech(){
+                //var speech=true;
+                var action1=document.getElementById('action1')
+                //this a inbuilt for speech recognition
+                window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                //when speech recognised and its values assigned to constant recognition
+                const recognition = new SpeechRecognition();
+                recognition.interimResults=true;
+                recognition.onstart = function(){
+                action.innerHTML="started ,please speak";
+                action1.innerHTML=" ";
+                //recognition.start();
+                }
+
+                // When true, the silence period is longer (about 15 seconds),
+                let speechtotext = document.createElement("speechtotext")
+
+                // allowing us to keep recording even when the user pauses.
+                recognition.continuous = true;
+
+                const words = document.querySelector('.words');
+                //what ever we speak that will display
+                words.appendChild(speechtotext);
+                //whenever there is change in input it will listen and displayed on id of speechtotext
+                recognition.addEventListener('result',e => {
+                const transcript = Array.from(e.results)
+                .map(result => result[0])
+                .map(result => result.transcript)
+                .join('')
+                document.getElementById("speechtotext").innerHTML = transcript;
+                //speechtotext.textcontent=transcript;
+                if(e.results[0].isFinal){
+                speechtotext=document.createElement("speechtotext");
+                words.appendChild(speechtotext);
+
+                }
+                //it will show the results in transcript
+                console.log(transcript);
+                localStorage.setItem("text1" ,transcript );
+
+                var retrievedUsername = localStorage.getItem("text1");
+                console.log(retrievedUsername);
+                });
+
+                recognition.start();
+
+
+                pause.onclick = function() {
+                    recognition.abort();
+                    console.log('Speech recognition aborted.');
+                    action1.innerHTML="stopped Recording ,";
+                    action.innerHTML=" ";
+}
+
+                recognition.onspeechend=function(){
+                        action.innerHTML=" ";
+                        recognition.stop();
+                }
+
+
+            }
+  </script>
+
+</body>
+</html>
