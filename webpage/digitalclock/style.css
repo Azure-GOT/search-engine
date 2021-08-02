@@ -15,7 +15,8 @@ body {
   border: 10px solid rgb(0, 240, 0);
   padding: 100px; 
   width: 300px;
-  height: 250px; 
+  height: 250px;
+  margin:50px;
 	
 }
 .blink-colon {
