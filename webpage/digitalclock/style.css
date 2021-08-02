@@ -32,9 +32,7 @@ body {
 	font-size: 2em;
 	color:rgb(0, 240, 0);
 }
-.blink-colon {
-	animation: blink 1s infinite linear;
-}
+
 @keyframes blink {
 	0%, 100% {
 		opacity: 1;
