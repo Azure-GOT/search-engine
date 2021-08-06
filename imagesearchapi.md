@@ -223,3 +223,8 @@ code
 
 
         </html>
+
+
+output
+
+<img src="/imagesearch api-images/outputimagesearchapi.png"/>
