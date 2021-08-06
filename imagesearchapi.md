@@ -228,3 +228,12 @@ code
 output
 
 <img src="/imagesearch api-images/outputimagesearchapi.png"/>
+
+<h1>To get the api key from pexels.com</h1>
+ steps
+ 1. Go to pexels.com/api
+<img src="/imagesearch api-images/pexelsapi/pexel1.jpg"/>
+<img src="/imagesearch api-images/pexelsapi/pexel2.jpg"/>
+<img src="/imagesearch api-images/pexelsapi/pexel3.jpg"/>
+<img src="/imagesearch api-images/pexelsapi/pexel4.jpg"/>
+
