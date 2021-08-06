@@ -232,8 +232,10 @@ output
 <h1>To get the api key from pexels.com</h1>
  steps
  1. Go to pexels.com/api
+ 2. <br>
 <img src="/imagesearch api-images/pexelsapi/pexel1.jpg"/>
 <img src="/imagesearch api-images/pexelsapi/pexel2.jpg"/>
 <img src="/imagesearch api-images/pexelsapi/pexel3.jpg"/>
 <img src="/imagesearch api-images/pexelsapi/pexel4.jpg"/>
-
+<br>
+Use the access key in the code to get the images.
