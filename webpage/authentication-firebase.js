@@ -42,7 +42,7 @@ auth.onAuthStateChanged(function(user){
                                           if(user){
                                                     var email=user.email;
                                                     //alert("Active User " + email);
-                                                    console.log("Active User " + email);
+                                                    //console.log("Active User " + email);
                                                     window.location.href = 'https://www.digitalpremieres.in/';
                                                     //Take user to a different or home page
                                                   }
