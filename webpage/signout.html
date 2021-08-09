@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signout</title>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+</head>
+<body>
+<button onclick="signOut()" id="signOut" class="btn"> Sign Out </button>
+</body>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyDd2HHFvyI-49ivWsRi2IsNCxYg2-3KZ1o",
+    authDomain: "lyrical-compass-321008.firebaseapp.com",
+    projectId: "lyrical-compass-321008",
+    storageBucket: "lyrical-compass-321008.appspot.com",
+    messagingSenderId: "354420458723",
+    appId: "1:354420458723:web:88ef567c7d9493e640f1d6"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+
+  const auth =firebase.auth();
+  function signOut(){
+  auth.signOut();
+  console.log("Signed out");
+  alert("Signed out");
+  window.location.href = 'form.html';
+  }
+</script>
+</html>
