@@ -6,8 +6,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
 </head>
-<body>
-<button onclick="signOut()" id="signOut" class="btn"> Sign Out </button>
+<body><center>
+  <button onclick="signOut()" id="signOut" class="btn"> Sign Out </button></center>
 </body>
 <script>
   var firebaseConfig = {
@@ -27,7 +27,7 @@
   auth.signOut();
   console.log("Signed out");
   alert("Signed out");
-  window.location.href = 'form.html';
+  window.location.href = 'authentication.html';
   }
 </script>
 </html>
