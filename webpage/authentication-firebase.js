@@ -24,7 +24,7 @@
   var password=document.getElementById("password");
   const promise=auth.createUserWithEmailAndPassword(email.value,password.value);
   promise.catch(e => alert(e.message));
-  alert("Signed Up wait a moment");
+  alert("Signed Up ");
   //window.location.href = 'authentication.html';
   console.log("Signed Up");
 
