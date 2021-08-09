@@ -43,6 +43,7 @@ auth.onAuthStateChanged(function(user){
                                                     var email=user.email;
                                                     alert("Active User " + email);
                                                     console.log("Active User " + email);
+                                                    window.location.href = 'col2.html';
                                                     //Take user to a different or home page
                                                   }
 
