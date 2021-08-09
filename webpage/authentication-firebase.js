@@ -25,7 +25,7 @@
   const promise=auth.createUserWithEmailAndPassword(email.value,password.value);
   promise.catch(e => alert(e.message));
   alert("Signed Up wait a moment");
-  window.location.href = '/authentication.html';
+  //window.location.href = 'authentication.html';
   console.log("Signed Up");
 
   }
@@ -50,7 +50,7 @@
 auth.onAuthStateChanged(function(user){
     if(user){
     var email=user.email;
-    //window.location.href = 'signout.html';
+    window.location.href = 'authentication.html';
    //alert("Active User " + email);
 
    console.log("Active User " + email);
