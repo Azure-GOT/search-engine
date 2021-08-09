@@ -39,23 +39,22 @@
                     }
 
 auth.onAuthStateChanged(function(user){
-          if(user){
-                    var email=user.email;
-                    alert("Active User " + email);
-                    console.log("Active User " + email);
-                    //Take user to a different or home page
-                  }
+                                          if(user){
+                                                    var email=user.email;
+                                                    alert("Active User " + email);
+                                                    console.log("Active User " + email);
+                                                    //Take user to a different or home page
+                                                  }
 
 
-                  
-         else{
-                  alert("No Active User");
-                  //no user is signed in
-                  console.log("No Active User");
+
+                                         else{
+                                                  alert("No Active User");
+                                                  //no user is signed in
+                                                  console.log("No Active User");
 
 
-             }
+                                             }
 
-}
-);
+                                    });
 
