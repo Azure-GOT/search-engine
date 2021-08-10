@@ -30,8 +30,9 @@
                     <input id="email" type="text" class="input" required />
                     <span class="placeholder">Email Id</span>
         </label><br><br>
+        <a href="#" onclick="forgotPass()">Click here To Reset</a><br><br>    
         <!--<a href="#" onclick="forgotPass()">Forgot Password</a>-->
-        <button href="#"  onclick="forgotPass()" class="btn btn-secondary">Reset</button><br><br>
+        <!--<button href="#"  onclick="forgotPass()" class="btn btn-secondary">Reset</button><br><br>-->
         <button onclick="location.href='index.html'" class="btn btn-secondary">Sign In</button><br><br>
         </center>
       </form>
@@ -47,19 +48,5 @@
         <script src="firebase.js"></script>
         <script src="index.js"></script>
 </body>
-<script>
-    //document.getElementById("forgot").addEventListener("submit",(event)=>{
-    //event.preventDefault()
-    //})
-    //function forgotPass(){
-    //const email = document.getElementById("email").value
-    //firebase.auth().sendPasswordResetEmail(email)
-    //.then(() => {
-    //    alert("Reset link sent to your email id")
-   // })
-    //.catch((error) => {
-    //    document.getElementById("error").innerHTML = error.message
-   // });
-//}
-</script>
+
 </html>
