@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Authentication:Social Account</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        rel="stylesheet"/>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        rel="stylesheet"/>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css"
+        rel="stylesheet"/>
+        <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
+        ></script>
+        <link href="./index.css" rel="stylesheet" />
+  </head>
+  <body class="d-flex justify-content-center p-5">
+    <div class="card">
+      <div class="card-header">
+        <center><h3>Login With Social Account</h3></center>
+      </div>
+            <form  id="forgot" class="card-body px-5 py-4">
+              <center><small><span id="error" style="color: red"></span></small></center>
+                        <p>sign in with any of the following Account</p>
+                  <center>
+                            <div id="LoginScreen">
+                                  <button id="login" class="btn btn-secondary">Login with Google</button>
+                            </div>
+
+                            <div id="dashboard">
+                                <div id="userDetails"></div>
+                                      <button id="logout">Logout</button>
+                            </div>
+                  </center>
+            </form>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        // Paste your Config Code
+        apiKey: "AIzaSyDd2HHFvyI-49ivWsRi2IsNCxYg2-3KZ1o",
+    authDomain: "lyrical-compass-321008.firebaseapp.com",
+    projectId: "lyrical-compass-321008",
+    storageBucket: "lyrical-compass-321008.appspot.com",
+    messagingSenderId: "354420458723",
+    appId: "1:354420458723:web:88ef567c7d9493e640f1d6"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      document.getElementById('dashboard').style.display="none"
+
+      document.getElementById('login').addEventListener('click', GoogleLogin)
+      document.getElementById('logout').addEventListener('click', LogoutUser)
+
+      let provider = new firebase.auth.GoogleAuthProvider()
+
+      function GoogleLogin(){
+        console.log('Login Btn Call')
+        firebase.auth().signInWithPopup(provider).then(res=>{
+          console.log(res.user)
+          document.getElementById('LoginScreen').style.display="none"
+          document.getElementById('dashboard').style.display="block"
+          showUserDetails(res.user)
+        }).catch(e=>{
+          console.log(e)
+        })
+      }
+
+      function showUserDetails(user){
+        document.getElementById('userDetails').innerHTML = `
+          <img src="${user.photoURL}" style="width:10%">
+          <p>Name: ${user.displayName}</p>
+          <p>Email: ${user.email}</p>
+        `
+      }
+
+      function checkAuthState(){
+        firebase.auth().onAuthStateChanged(user=>{
+          if(user){
+            document.getElementById('LoginScreen').style.display="none"
+            document.getElementById('dashboard').style.display="block"
+            showUserDetails(user)
+          }else{
+
+          }
+        })
+      }
+
+      function LogoutUser(){
+        console.log('Logout Btn Call')
+        firebase.auth().signOut().then(()=>{
+          document.getElementById('LoginScreen').style.display="block"
+          document.getElementById('dashboard').style.display="none"
+        }).catch(e=>{
+          console.log(e)
+        })
+      }
+      checkAuthState()
+    </script>
+  </body>
+</html>
