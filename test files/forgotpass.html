@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forgot Password</title>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+
+
+</head>
+<body><center>
+    <h2>Forgot Password</h2>
+    <small><span id="error" style color: red;></span></small>
+    <input type ="email" placeholder="email" id="email"/>
+    <button onclick="forgotpwd()" id="forgotpass" class="btn"> reset password </button>
+
+
+    </center>
+</body>
+<script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyDd2HHFvyI-49ivWsRi2IsNCxYg2-3KZ1o",
+    authDomain: "lyrical-compass-321008.firebaseapp.com",
+    projectId: "lyrical-compass-321008",
+    storageBucket: "lyrical-compass-321008.appspot.com",
+    messagingSenderId: "354420458723",
+    appId: "1:354420458723:web:88ef567c7d9493e640f1d6"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  function forgotPass(){
+    const email = document.getElementById("email").value
+    firebase.auth().sendPasswordResetEmail(email)
+    .then(() => {
+        alert("Reset link sent to your email id")
+    })
+    .catch((error) => {
+        document.getElementById("error").innerHTML = error.message
+    });
+}
+</script>
+</html>
