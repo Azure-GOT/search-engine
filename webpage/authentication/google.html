@@ -80,12 +80,16 @@
           console.log(e)
         })
       }
-
+      //<img src="${user.photoURL}" style="width:10%">
+      //<p>Email: ${user.email}</p>
       function showUserDetails(user){
         document.getElementById('userDetails').innerHTML = `
-          <img src="${user.photoURL}" style="width:10%">
-          <p>Name: ${user.displayName}</p>
-          <p>Email: ${user.email}</p>
+      
+          <center>
+          <p>Welcome ${user.displayName}</p>
+          <p>Your Can Log In now </p>
+          <a href="welcome.html"  style="color:red;">SIGN IN</a><br><br>
+          <a href="index.html"  style="color:red;">Home Page</a><br><br></center>
         `
       }
 
