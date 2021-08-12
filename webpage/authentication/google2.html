@@ -16,7 +16,11 @@
     <div id="dashboard">
       <div id="userDetails"></div>
       <button id="logout" style="color:red;">Logout Instantly</button>
-    </div></center>
+    </div>
+  <br><br>
+    <a href="index.html"   class="btn btn-secondary">Home Page</a><br><br>
+  </center>
+
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
@@ -70,12 +74,11 @@
   //<p>Email: ${user.email}</p>
       function showUserDetails(user){
         document.getElementById('userDetails').innerHTML = `
-
           <center>
           <p>Welcome ${user.displayName}</p>
           <p>Your Can Log In now </p>
           <a href="welcome.html"  style="color:red;">SIGN IN</a><br><br>
-          <a href="index.html"  style="color:red;">Home Page</a><br><br></center>
+          <!--<a href="index.html"  style="color:red;">Home Page</a><br><br>--></center>
         `
       }
 
