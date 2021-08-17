@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Signup</title>
+
+     <link rel="stylesheet" href="signup2.css">
+  </head>
+  <body>
+
+    <main>
+      <section class="container signup-container">
+        <fieldset>
+            <center><h2 style="color:darkBlue;">Create an account</h2></center>
+          <div>
+            <!--<img src="./img/signup.svg">-->
+            <!--https://www.visualpharm.com/free-icon-->
+              <center><small><span id="error" style="color: red"></span></small></center>
+
+           </div>
+          <div>
+
+            <label for="mail">Email</label> <br>
+           <input type="email" id="mail" name="mail"/>
+         </div>
+          <div>
+           <label for="password">Password</label> <br>
+           <input type="password" id="password" name="password"/> <br>
+          </div>
+          <button id="signUp">Signup</button><br><br><br>
+            <center><a href="index.html"  class="btn btn-secondary">Home Page</a><br><br></center>
+
+
+          <center><small><span id="error1" style="color: blue"></span></small></center>
+
+        </fieldset>
+          <center><small><span id="error1" style="color: blue"></span></small></center>
+      </section>
+      <div class="feedbackContainer failure">
+        <div class="feedbackIcon"></div>
+        <p class="feedbackMessage">Signing up failed</p>
+      </div>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+
+    <!-- Initialize Firebase -->
+        <script src="firebase.js"></script>
+    <script src="signup10.js"></script>
+  </body>
+</html>
