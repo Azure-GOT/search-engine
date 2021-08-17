@@ -27,7 +27,7 @@ const signUpFunction = () => {
     .then(() => {
         sendVerificationEmail();
         var user=firebase.auth().currentUser;
-        alert(user.email)
+        //alert(user.email)
         var email_id=user.email;
         var email_verified=user.emailVerified;
         document.getElementById("error").innerHTML = "Welcome user: " +email_id+ "  verified " +email_verified;
@@ -38,9 +38,8 @@ const signUpFunction = () => {
         //sendVerificationEmail();
         }
         else{
-        alert("verify your email")
+        //alert("verify your email")
         document.getElementById("error").innerHTML = "Welcome user: " +email_id+ "  verified " +email_verified;
-        document.getElementById("error1").innerHTML ="After verification done  ,click on Home page to sign in "
         }
 
     })
@@ -58,6 +57,8 @@ const sendVerificationEmail = () => {
     .then(() => {
         console.log('Verification Email Sent Successfully !');
         alert("Verification Email Sent Successfully !")
+        document.getElementById("error1").innerHTML ="After verification done  ,click on Home page to sign in "
+
         //redirecting the user to the profile page once everything is done correctly
         //window.location.assign('index.html');
     })
