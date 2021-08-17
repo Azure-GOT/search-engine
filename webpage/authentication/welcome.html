@@ -24,6 +24,7 @@
         <span id="user" class="message">Hello, < email-id ></Email-id></span>
         <div class="success"><span>Welcome to authentication demonstration page , You are successfully logged in<br> web site will arrive soon.</span></div><br/>
         <button class="btn btn-danger" onclick="logout()">Logout</button>
+        <button class="btn btn-danger" onclick="delete1()">Delete Account</button>
     </div></center>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
@@ -35,5 +36,21 @@
 
     <script src="firebase.js"></script>
     <script src="welcome.js"></script>
+    <script >
+        function delete1(){
+        const user = firebase.auth().currentUser;
+
+        user.delete().then(() => {
+        // User deleted.
+        console.log("deleted");
+        alert("Your Account deleted ,Sorry to you Go #GoodBye")
+        }).catch((error) => {
+          // An error ocurred
+          // ...
+          console.log("sorry some error occured");
+          alert("some error occured,try again later")
+        });}
+    </script>
+
 </body>
 </html>
