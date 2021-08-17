@@ -20,13 +20,14 @@ function login(){
         if(!email_verified){
         //alert("email is not verified")
         //<a href="welcome.html"  style="color:red;">click here to enter the website</a><br><br>
-        document.getElementById('check1').innerHTML = `
+        document.getElementById('check2').innerHTML =email_id+" Is Not Verified !!<br>Verification of  Your Mail is needed To login, check ur email "
+        //document.getElementById('check1').innerHTML = `
 
-          <br><br><center>
-          <p>Sorry To Say</p>
-          <p>Your Account Is Not Verified </p>
-          <p>Verification of  Your Mail is needed To login, check ur email </p>
-          <a href="index.html"  style="color:red;">Home Page</a><br><br></center>`
+          //<br><br><center>
+          //<p>Sorry To Say</p>
+          //<p>Your Account Is Not Verified </p>
+          //<p>Verification of  Your Mail is needed To login, check ur email </p>
+          //<a href="index.html"  style="color:red;">Home Page</a><br><br></center>`
 
         //document.getElementById('check1').innerHTML = `<br><br>`
         //document.getElementById('check1').innerHTML = `
