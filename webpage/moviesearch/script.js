@@ -1,17 +1,10 @@
+
 //TMDB
 
 const API_KEY = 'api_key=9a85a018f878f3af62f324c75c332248';
 const BASE_URL = 'https://api.themoviedb.org/3';
 //use the below api url for the most popular movies
-//const API_URL = BASE_URL + '/discover/movie?&region=IN&sort_by=popularity.desc&'+API_KEY+'&language=en';
-//this is for telugu language
-const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te&sort_by=vote_average.desc&primary_release_year=2021';
-//This is for release Dates
-//const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te&sort_by=vote_average.desc&primary_release_year=2021&primary_release_date.gte=2021-07-15&primary_release_date.lte=2021-08-15';
-
-//const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te';
-
-
+const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te';
 //use the below api url for the best movies from 2010
 const API2_URL = BASE_URL + '/discover/movie?primary_release_year=2020&sort_by=vote_average.desc&'+API_KEY;
 //use the below api url for the movies are in theatres
@@ -20,7 +13,7 @@ const API3_URL = BASE_URL + '/discover/movie?primary_release_date.gte=2014-09-15
 //use the below api url for the highest rated movies
 
 const API4_URL = BASE_URL + 'the highest rated movies rated R&'+API_KEY;
-
+//https://api.themoviedb.org/3/movie/550?api_key={api_key}&language=en-US&append_to_response=images&include_image_language=en,null
 //https://api.themoviedb.org/3/discover/movie?api_key=<<api_key>>&language=de-DE&region=DE&release_date.gte=2016-11-16&release_date.lte=2016-12-02&with_release_type=2|3
 
 
@@ -69,7 +62,7 @@ function showMovies(data) {
                 <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
 
-            
+
 
         `
 
