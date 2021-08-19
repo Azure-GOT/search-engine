@@ -6,6 +6,9 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 //const API_URL = BASE_URL + '/discover/movie?&region=IN&sort_by=popularity.desc&'+API_KEY+'&language=en';
 //this is for telugu language
 const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te&sort_by=vote_average.desc&primary_release_year=2021';
+//This is for release Dates
+//const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te&sort_by=vote_average.desc&primary_release_year=2021&primary_release_date.gte=2021-07-15&primary_release_date.lte=2021-08-15';
+
 //const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te';
 
 
