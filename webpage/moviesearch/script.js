@@ -6,6 +6,8 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 //const API_URL = BASE_URL + '/discover/movie?&region=IN&sort_by=popularity.desc&'+API_KEY+'&language=en';
 //this is for telugu language
 const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te';
+//const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te';
+
 
 //use the below api url for the best movies from 2010
 const API2_URL = BASE_URL + '/discover/movie?primary_release_year=2020&sort_by=vote_average.desc&'+API_KEY;
