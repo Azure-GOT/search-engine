@@ -3,7 +3,10 @@
 const API_KEY = 'api_key=9a85a018f878f3af62f324c75c332248';
 const BASE_URL = 'https://api.themoviedb.org/3';
 //use the below api url for the most popular movies
-const API_URL = BASE_URL + '/discover/movie?&region=IN&sort_by=popularity.desc&'+API_KEY+'&language=en';
+//const API_URL = BASE_URL + '/discover/movie?&region=IN&sort_by=popularity.desc&'+API_KEY+'&language=en';
+//this is for telugu language
+const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te';
+
 //use the below api url for the best movies from 2010
 const API2_URL = BASE_URL + '/discover/movie?primary_release_year=2020&sort_by=vote_average.desc&'+API_KEY;
 //use the below api url for the movies are in theatres
