@@ -232,6 +232,4 @@ main{
     font-size:10px;
 }
 
-.movie:hover .overview{
-    transform:translateY(0)
-}
+
