@@ -3,17 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <link rel="stylesheet" href="style.css">
     <title>Movie App</title>
-    <center><h1>Movie Search</h1>
-    <h4>Styling will add soon</h4></center>
+    <center><h1>Movie Search</h1></center>
 </head>
 <body>
 <center>
     <header>
         <form  id="form">
+            <div class="navbar">
+  <a href="index.html">HOME</a>
+  <a href="#" onclick="scriptDemo()">Telugu Movies</a>
+  <a href="#news">Genres</a>
+  <div class="dropdown">
+    <button class="dropbtn">Languages
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <button  id="movie2" onclick="scriptDemo()">Telugu</button>
+
+      <a href="#">English</a>
+      <a href="#">Telugu</a>
+      <a href="#">Hindi</a>
+    </div>
+
+
+
+  </div>
+</div>
+            <div class="tab">
+
+  <button class="tablinks" onclick="#">Home</button>
+  <button class="tablinks" id="movie2" onclick="scriptDemo()">Telugu Movies</button>
+  <button class="tablinks" onclick="#">Latest Movies</button>
+  <button class="tablinks" onclick="#">Genres</button>
+</div>
+
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+
+
+            <div class="search1">
+
             <input type="text" placeholder="Search" id="search" class="search">
             <button   id="search" class="search">Enter</button><br><br>
+            </div>
         </form>
     </header>
 
@@ -30,6 +77,7 @@
     </main>
 
 
-    <script src="script.js"></script></center>
+    <script src="script.js"></script>
+    <script src="script2.js"></script></center>
 </body>
 </html>
