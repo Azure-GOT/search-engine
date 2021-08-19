@@ -5,7 +5,7 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 //use the below api url for the most popular movies
 //const API_URL = BASE_URL + '/discover/movie?&region=IN&sort_by=popularity.desc&'+API_KEY+'&language=en';
 //this is for telugu language
-const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te';
+const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te&sort_by=vote_average.desc&primary_release_year=2021';
 //const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te';
 
 
