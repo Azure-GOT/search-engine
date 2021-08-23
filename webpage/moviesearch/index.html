@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleupdated.css">
+
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+
+
+    <link rel="stylesheet" href="style.css">
     <title>Movie App</title>
 </head>
 <body>
@@ -12,27 +19,13 @@
 
     <header>
         <form  id="form">
-            <div class="navbar">
+            <div class="navbar ">
   <a href="index.html">Home</a>
   <a href="#" onclick="popularDemo()">Trending</a>
-  <!--<a href="#news">Genres</a>-->
-  <a href="#" onclick="test1()">Testing</a>
+  <!--<a href="#news">Genres</a>
+  <a href="#" onclick="test1()">Testing</a>-->
 
-   <div class="dropdown2">
 
-                <button class="dropbtn2">Genre
-                                    <i class="fa fa-caret-down"></i>
-                </button>
-
-                    <div id="tags" class="dropdown-content2">
-                                    <div id="tag">Action</div>
-                                    <div id="tag">Thriller</div>
-                                    <div id="tag">Drama</div>
-                                    <div id="tag">Sci-Fi</div>
-
-                  </div>
-
-  </div>
 
 
 
@@ -48,47 +41,25 @@
 
       <a href="#" id="movie2" onclick="scriptDemo()">Telugu</a>
       <a href="#" onclick="script3Demo()" >Tamil</a>
-      <a href="#" onclick="script2Demo()">English</a>
+
       <a href="#" onclick="script4Demo()" >Hindi</a>
+      <a href="#" onclick="script6Demo()">Kannada</a>
+      <a href="#" onclick="script2Demo()">English</a>
       <a href="#" onclick="script5Demo()">Malayalam</a>
     </div>
 
-
-
-
   </div>
+    <input type="text" placeholder="Search" id="search" class="search ">
+    <button   id="search1" class="search">Enter</button>
 </div>
 
             <div class="tab"></div>
-  <!--          <div class="tab">
-
-  <button class="tablinks" onclick="#">Home</button>
-  <button class="tablinks" id="movie3" onclick="popularDemo()">Popular</button>
-  <button class="tablinks" onclick="#">Latest Movies</button>
-  <button class="tablinks" onclick="#">Genres</button>
-</div>
-
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p>
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>-->
 
 
 
-            <div class="search1">
+            <div class="search2">
 
-            <input type="text" placeholder="Search" id="search" class="search">
-            <button   id="search1" class="search">Enter</button><br><br>
+
             </div>
         </form>
     </header>
@@ -97,17 +68,17 @@
 
 
     <main id="main">
-        <div class="movie">
+        <!--<div class="movie">
             <div class="movie-info">
                 <h3>Movie Title</h3>
-                <span class="green">9.8</span>
+                <<span class="green">9.8</span>
             </div>
-        </div>
+        </div>-->
     </main>
     <div class="pagination">
-        <div class="page" id="prev">Previous Page</div>
-        <div class="current" id="current">1</div>
-        <div class="page" id="next">Next Page</div>
+        <div class="page" id="prev" href="#">Previous Page</div>
+        <div class="current" id="current" href="#" >1</div>
+        <div class="page" id="next" href="#" >Next Page</div>
 
     </div>
 
@@ -119,11 +90,13 @@
     <script src="tamil.js"></script>
     <script src="hindi.js"></script>
     <script src="malayalam.js"></script>
+    <script src="kannada.js"></script>
+
     <script src="popular.js"></script>
     <script src="testing.js"></script>
 
 
-
 </center>
+
 </body>
 </html>
