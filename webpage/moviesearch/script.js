@@ -232,7 +232,7 @@ console.log(genres)
 prev.addEventListener('click', () => {
   if(prevPage > 0){
     pageCall(prevPage);
-    form.scrollIntoView({behavior: "auto", block: "start", inline: "nearest"})
+    form.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
 
     //form.scrollIntoView({behavior : 'smooth'})
   }
