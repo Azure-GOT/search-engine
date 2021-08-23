@@ -4,7 +4,7 @@
 const API_KEY = 'api_key=9a85a018f878f3af62f324c75c332248';
 const BASE_URL = 'https://api.themoviedb.org/3';
 //use the below api url for the most popular movies
-const API_URL = BASE_URL + '/discover/movie?&region=IN&'+API_KEY+'&with_original_language=te';
+const API_URL = BASE_URL + '/discover/movie?region=IN&'+API_KEY+'&with_original_language=te';
 //use the below api url for the best movies from 2010
 const API2_URL = BASE_URL + '/discover/movie?primary_release_year=2020&sort_by=vote_average.desc&'+API_KEY;
 //use the below api url for the movies are in theatres
@@ -46,11 +46,31 @@ var totalPages = 100;
 getMovies(API_URL);
 
 function getMovies(url) {
-  //lastUrl = url;
+    lastUrl = url;
     fetch(url).then(res => res.json()).then(data => {
         console.log(data.results)
         if(data.results.length !=0){
         showMovies(data.results);
+
+        //pagination
+            currentPage = data.page;
+            nextPage = currentPage + 1;
+            prevPage = currentPage - 1;
+            totalPages = data.total_pages;
+
+            current.innerText = currentPage;
+
+            if(currentPage <= 1){
+              prev.classList.add('disabled');
+              next.classList.remove('disabled')
+            }else if(currentPage>= totalPages){
+              prev.classList.remove('disabled');
+              next.classList.add('disabled')
+
+            }else{
+              prev.classList.remove('disabled');
+              next.classList.remove('disabled')
+            }
 
 
         }
@@ -199,15 +219,47 @@ const genres =
   ]
 
 console.log(genres)
-
+//document.getElementById(genre);
 }
+//---------------------------------------------------||-----------------------------
+//for click it will load page
+//window.onload = function() {
+  //     getMovies()
+   //   };
+//------------------------------------pagination-------------------------------------------
 
 
+prev.addEventListener('click', () => {
+  if(prevPage > 0){
+    pageCall(prevPage);
+    form.scrollIntoView({behavior : 'smooth'})
+  }
+})
 
+next.addEventListener('click', () => {
+  if(nextPage <= totalPages){
+    pageCall(nextPage);
+    form.scrollIntoView({behavior : 'smooth'})
+  }
+})
 
-
-
-
+function pageCall(page){
+  let urlSplit = lastUrl.split('?');
+  let queryParams = urlSplit[1].split('&');
+  let key = queryParams[queryParams.length -1].split('=');
+  if(key[0] != 'page'){
+    let url = lastUrl + '&page='+page
+    getMovies(url);
+    console.log("hello")
+  }else{
+    key[1] = page.toString();
+    let a = key.join('=');
+    queryParams[queryParams.length -1] = a;
+    let b = queryParams.join('&');
+    let url = urlSplit[0] +'?'+ b
+    getMovies(url);
+  }
+}
 
 
 
