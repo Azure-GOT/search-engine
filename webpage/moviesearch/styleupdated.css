@@ -10,6 +10,7 @@
   overflow: hidden;
   background-color: #333;
   font-family: Arial;
+
 }
 
 /* Links inside the navbar */
@@ -28,9 +29,25 @@
   float: left;
   overflow: hidden;
 }
+.dropdown2 {
+  float: left;
+  overflow: hidden;
+}
 
 /* Dropdown button */
 .dropdown .dropbtn {
+  border-radius: 50px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.dropdown2 .dropbtn2 {
   border-radius: 50px;
   font-size: 16px;
   border: none;
@@ -47,8 +64,22 @@
   background-color: red;
 }
 
+.navbar a:hover, .dropdown2:hover .dropbtn2 {
+  background-color: red;
+}
+
+
 /* Dropdown content (hidden by default) */
 .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 1px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content2 {
   display: none;
   position: absolute;
   background-color: white;
@@ -67,8 +98,22 @@
   text-align: center;
 }
 
+.dropdown-content2 a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content2 a:hover {
   background-color: #ddd;
 }
 
@@ -77,11 +122,58 @@
   display: block;
 }
 
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+.noResult{
+        color:black;
+}
+
+.pagination{
+    display:flex;
+    margin:10px 90px;
+    align-items: center;
+    justify-content: center;
+    color:darkRed;
+    position: -webkit-sticky;
+    position: sticky;
+
+
+}
+
+.page{
+    padding:20px;
+    cursor:pointer;
+}
+
+.page.disabled{
+    cursor:not-allowed;
+    color:grey;
+}
+
+.current{
+    padding: 10px 20px;
+    border-radius: 100%;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+.tag{
+    color:white;
+    padding:10px 20px;
+    background-color: orange;
+    border-radius: 50px;
+    margin:5px;
+    display:inline-block;
+    cursor: pointer;
+}
+
+
 
 
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
+  border: 20px solid white;
   background-color: #f1f1f1;
 }
 
@@ -116,8 +208,8 @@
 }
 
 :root{
-    --primary-color:#22254b;
-    --secondary-color: #373b69;
+    --primary-color:white;
+    --secondary-color: #001133;
 }
 
 body{
@@ -129,30 +221,47 @@ body{
 h1{
     display:flex;
     justify-content: center;
-    color:red;
+    color:darkRed;
+    position: -webkit-sticky;
+
+    position: sticky;
 
 }
 
-.search1{
-    padding:1rem;
+h3{
+    font-size:15px;
+
+    justify-content: center;
+}
+
+.search2{
+    padding:0.5rem;
     display:flex;
     justify-content: flex-end;
-    background-color: var(--secondary-color);
+    background-color: #330033;
+    border-radius: 50px;
 }
 
 .search{
     background-color: transparent;
-    border: 2px solid var(--primary-color);
-    padding:0.5rem 1rem;
+    border: 3px solid var(--primary-color);
+    padding:5px;
     border-radius: 50px;
     font-size: 1rem;
     color:#fff;
     font-family: inherit;
+    margin-top:4px;
+    margin-bottom:2.5px
+    position:relative;
+    left:100px
+
+
+
 }
 
 .search:focus{
     outline:0;
-    background-color: var(--primary-color);
+    background-color: #003300;
 }
 
 .search::placeholder{
@@ -163,6 +272,7 @@ main{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+
 
 }
 
@@ -175,6 +285,10 @@ main{
     background-color: var(--secondary-color);
     position:relative;
     overflow: hidden;
+
+
+
+
 }
 
 
@@ -204,7 +318,7 @@ main{
 }
 
 .movie-info span.green{
-    color:lightgreen;
+    color:lightGreen;
 }
 
 .movie-info span.orange{
@@ -228,10 +342,28 @@ main{
 
     max-height: 100%;
     transform:translateY(101%);
-    transition:transform 0.3s ease-in;
+    transition:transform 0s ease-in;
     font-size:10px;
+}
+.overview{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+
+
+
 }
 
 .movie:hover .overview{
+
     transform:translateY(0)
+
 }
+
