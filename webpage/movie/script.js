@@ -177,7 +177,7 @@ var el_up = document.getElementById("");
 //-------------------------------------------------------------------------------------------------------------
 		function getMovies(url) {
 				    lastUrl = url;
-				    alert("this is "+lastUrl);
+				    //alert("this is "+lastUrl);
 
 				    fetch(url).then(res => res.json()).then(data => {
 					    
