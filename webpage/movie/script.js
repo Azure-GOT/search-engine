@@ -169,41 +169,8 @@ var el_up = document.getElementById("");
                         //alert(xy);
                         }
                     }
-//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        /*for (var i = 0; i < z.length; i++) {
-                        if(Object.values(z)[i]=="search"){
-                                                    //var k=KANNADA_URL;
-
-                                                    form.addEventListener('submit', (e) => {
-                                                        e.preventDefault();
-
-                                                         const searchTerm = search.value;
-
-                                                        if(searchTerm) {
-                                                            getMovies(searchURL+'&query='+searchTerm);
-                                                        }
-                                                        else{
-                                                        getMovies(lastUrl);
-                                                        }
-
-                                                    })
-                                                    //alert("Hello World!"+xy);
-                                                   }
-
-                        //alert(Object.values(z)[i]);
-                        //alert(xy);
-                        }
-                        */
-
-
-
-//return xy;
-
-
-
-//------------------------------------------------------------------------------------------------------
-
+//============================================================================================================================================================
 //x=demo();
 //window.alert(x);
 //alert("hi this is "+xy);
@@ -285,9 +252,9 @@ var el_up = document.getElementById("");
 				 if(searchTerm) {
 					 getMovies(searchURL+'&query='+searchTerm);
 				 }
-			 //else{
-			    //  getMovies(lastUrl);
-			 // }
+			 else{
+			      getMovies(lastUrl);
+			  }
 
 	})
 
