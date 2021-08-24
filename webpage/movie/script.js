@@ -253,7 +253,7 @@ var el_up = document.getElementById("");
 					 getMovies(searchURL+'&query='+searchTerm);
 				 }
 			 else{
-			      getMovies(lastUrl);
+			      getMovies(API_URL);
 			  }
 
 	})
