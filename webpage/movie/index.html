@@ -1,106 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-    </script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Movie App</title>
+    </head>
+    
+    <body>
+            <center>
+                    <h1>Movie Search</h1>
 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
-
-
-    <link rel="stylesheet" href="style.css">
-    <title>Movie App</title>
-</head>
-<body>
-<center>
-        <h1>Movie Search</h1>
-
-    <header>
-        <form  class="form" id="form">
-            <div class="navbar ">
-  <a href="index.html">Home</a>
-  <a href="#" id="trending" >Trending</a>
-  <!--<a href="#news">Genres</a>
-  <a href="#" onclick="test1()">Testing</a>-->
+                    <header>
+                            <form  class="form" id="form">
+                                      <div class="navbar ">
+                                            <a href="index.html">Home</a>
+                                            <a href="#" id="trending" >Trending</a>
+                                            <!--<a href="#news">Genres</a>
+                                            <a href="#" onclick="test1()">Testing</a>-->
 
 
+                                            <div class="dropdown">
+
+                                                    <button class="dropbtn"> Languages </button>
+                                                
+                                                    <div class="dropdown-content">
+                                                                <br>  
+                                                                  <button href="#" id="telugu" > Telugu </button><br><br>
+                                                                  <button href="#" id="tamil" > Tamil </button><br><br>
+                                                                  <button href="#" id="hindi" > Hindi </button><br><br>
+                                                                  <button href="#" id="kannada"> Kannada </button><br><br>
+                                                                  <button href="#" id="english"> English </button><br><br>
+                                                                  <button href="#" id="malayalam"> Malayalam </button><br>
+                                                                 <br>
+                                                    </div>
+
+                                            </div>
+                                          <input type="text" placeholder="Search" id="search" class="search ">
+                                          <!--<button   id="search" class="search">Enter</button>-->
+                                    </div>
+
+                                    <div class="tab"></div>
+
+                                    <div class="search2"></div>
+                            </form>
+                </header>
+
+                            <main id="main"></main>
+                
+                            <div class="pagination">
+                                
+                                <div class="page" id="prev" href="#">Previous Page</div>
+                                <div class="current" id="current" href="#" >1</div>
+                                <div class="page" id="next" href="#" >Next Page</div>
+
+                            </div>
 
 
-
-  <div class="dropdown">
-
+                            <script src="script.js"></script>
 
 
-    <button class="dropbtn">Languages
+            </center>
 
-    </button>
-    <div class="dropdown-content">
-    <!--<button  id="movie2" onclick="scriptDemo()">Telugu</button>-->
-<br>
-      <button href="#" id="telugu" >Telugu</button><br><br>
-        <!--<a href="#" id="tamil" onclick="asd()">Hello World</a>-->
-
-      <button href="#" id="tamil"   >Tamil</button><br><br>
-
-      <button href="#" id="hindi"  >Hindi</button><br><br>
-      <button href="#" id="kannada" >Kannada</button><br><br>
-      <button href="#" id="english" >English</button><br><br>
-      <button href="#" id="malayalam" >Malayalam</button><br><br>
-    </div>
-
-  </div>
-    <input type="text" placeholder="Search" id="search" class="search ">
-    <!--<button   id="search" class="search">Enter</button>-->
-</div>
-
-            <div class="tab"></div>
-
-
-
-            <div class="search2">
-
-
-            </div>
-        </form>
-    </header>
-
-
-
-
-    <main id="main">
-        <!--<div class="movie">
-            <div class="movie-info">
-                <h3>Movie Title</h3>
-                <<span class="green">9.8</span>
-            </div>
-        </div>-->
-    </main>
-    <div class="pagination">
-        <div class="page" id="prev" href="#">Previous Page</div>
-        <div class="current" id="current" href="#" >1</div>
-        <div class="page" id="next" href="#" >Next Page</div>
-
-    </div>
-
-
-    <script src="script.js"></script>
-
-    <!--<script src="script2.js"></script>
-    <script src="english.js"></script>
-    <script src="tamil.js"></script>
-    <script src="hindi.js"></script>
-    <script src="malayalam.js"></script>
-    <script src="kannada.js"></script>
-
-    <script src="popular.js"></script>
-    <script src="testing.js"></script>-->
-
-
-</center>
-
-</body>
+    </body>
 </html>
