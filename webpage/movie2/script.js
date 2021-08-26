@@ -275,7 +275,7 @@ function showMovies(data) {
                 <span id="sample" class="${getColor(vote1)} d-flex-row justify-content right">${vote1}</span>
             </div>
             <div class="overview">
-                <h6>Overview</h6}
+                <h5>Overview</h5}
                 <p>Movie-Name: ${title}</p>
                 <p>Rating: ${vote1}<p>
 
