@@ -40,41 +40,7 @@ jsArrow.onclick = function() {
 
 
 
-//==================================================================================================
-/*function script3Demo(){
-//TMDB
-
-const API_KEY = 'api_key=9a85a018f878f3af62f324c75c332248';
-const BASE_URL = 'https://api.themoviedb.org/3';
-//use the below api url for the most popular movies
-const API_URL = BASE_URL + '/discover/movie?region=IN&'+API_KEY+'&with_original_language=te';
-//use the below api url for the best movies from 2010
-const API2_URL = BASE_URL + '/discover/movie?primary_release_year=2020&sort_by=vote_average.desc&'+API_KEY;
-//use the below api url for the movies are in theatres
-const API3_URL = BASE_URL + '/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&'+API_KEY;
-
-//use the below api url for the highest rated movies
-
-const API4_URL = BASE_URL + 'the highest rated movies rated R&'+API_KEY;
-//https://api.themoviedb.org/3/movie/550?api_key={api_key}&language=en-US&append_to_response=images&include_image_language=en,null
-//https://api.themoviedb.org/3/discover/movie?api_key=<<api_key>>&language=de-DE&region=DE&release_date.gte=2016-11-16&release_date.lte=2016-12-02&with_release_type=2|3
-
-const TAMIL_URL = BASE_URL + '/discover/movie?region=IN&'+API_KEY+'&with_original_language=ta';
-//const HINDI_URL = BASE_URL + '/discover/movie?region=IN&'+API_KEY+'&with_original_language=hi';
-//return TAMIL_URL;
-
-//----------------------------------------------------------testing zone------------------------------------------------------
-const tamil = document.getElementById('tamil');
-//window.alert(tamil);
-//tamil.addEventListener('click', () => {
-var cv=document.getElementById("tamil").addEventListener("click", function mine() {
-  var url1 =TAMIL_URL ;
-  return url1
-});
-//return TAMIL_URL;
-return cv
-}
-*/
+//================================================================================================
 
 
 
@@ -120,18 +86,7 @@ getMovies(API_URL);
 //const tamil = document.getElementById('tamil');
 //getMovies(API_URL);
 
-/*function tamilDemo() {
-  var x = document.getElementsByTagName("a")[0].getAttribute("id");
-  //document.getElementById("demo").innerHTML = x;
-    window.alert(x);
-  if(x=="tamil"){
-  window.alert(x);
-  }
-  else{
-  window.alert("hi");
-  }
 
-}*/
 
 //-----------------------------------------------------------------
 var el_up = document.getElementById("");
@@ -236,42 +191,6 @@ var el_up = document.getElementById("");
                         //alert(xy);
                         }
                     }
-        /*function demosum(){
-        for (var i = 0; i < z.length; i++) {
-                        if(Object.values(z)[i]=="hindi"){
-                                                    var xyz=HINDI_URL;
-                                                    //document.getElementById(Object.values(z)[i]).addEventListener("click", function() {
-                                                     return getMovies(xyz);
-                                                    //alert("Hello World!"+xy);
-                                                    //});
-                        //alert(Object.values(z)[i]);
-                        //alert(xy);
-                        }
-                    }}
-        for (var i = 0; i < z.length; i++) {
-                        if(Object.values(z)[i]=="search"){
-                                                    //var k=KANNADA_URL;
-
-                                                    form.addEventListener('submit', (e) => {
-                                                        e.preventDefault();
-
-                                                         const searchTerm = search.value;
-
-                                                        if(searchTerm) {
-                                                            getMovies(searchURL+'&query='+searchTerm);
-                                                        }
-                                                        else{
-                                                        getMovies(lastUrl);
-                                                        }
-
-                                                    })
-                                                    //alert("Hello World!"+xy);
-                                                   }
-
-                        //alert(Object.values(z)[i]);
-                        //alert(xy);
-                        }
-                        */
 
 
 
@@ -338,7 +257,7 @@ function showMovies(data) {
     main.innerHTML = '';
 
     data.forEach(movie => {
-        const {title, poster_path, vote_average, overview, id} = movie;
+        const {title, poster_path, backdrop_path, popularity, vote_count, vote_average, overview, release_date, adult, original_title, original_language, video, id, provider_name, logo_path} = movie;
         var vote1=vote_average
         if(vote1>0){
         vote1=vote_average;
@@ -355,16 +274,106 @@ function showMovies(data) {
                 <h3>${title}</h3>
                 <span id="sample" class="${getColor(vote1)} d-flex-row justify-content right">${vote1}</span>
             </div>
+            <div class="overview">
 
+                <h3>Overview</h3>
+                <p>Movie-Name: ${title}</p>
+                <p>Rating: ${vote1}<p>
+
+                <p>Release-Date: ${release_date}<p>
+                <p>Vote-Count: ${vote_count}<p>
+                <p></p>
+
+
+
+                <button class="know-more" id="${id}">Know More</button
+            </div>
 
 
         `
 
         main.appendChild(movieEl);
-
+        document.getElementById(id).addEventListener('click', () => {
+          console.log(id)
+          openNav(movie)
+        })
 
     })
 }
+//=========================================================================================================
+const overlayContent = document.getElementById('overlay-content');
+
+function openNav(movie) {
+  let id = movie.id;
+  fetch(BASE_URL + '/movie/'+id+'/videos?'+API_KEY).then(res => res.json()).then(videoData => {
+    console.log(videoData);
+    if(videoData){
+      document.getElementById("myNav").style.width = "100%";
+      document.getElementById("myNav").style.height = "100%";
+
+      var content = `
+        <h1 class="no-results">${movie.title}</h1>
+        <br/>
+
+        <p id="resultq"> Story-line  <br> <br>${movie.overview}</p><br>
+        <p id="resultq"> Original-Title: ${movie.original_title} </p><br>
+        <p id="resultq"> Related Videos </p><br>
+
+
+        `
+
+      if(videoData.results.length > 0){
+        var embed = [];
+        var dots = [];
+
+        videoData.results.forEach((video, idx) => {
+          let {name, key, site} = video
+
+          if(site == 'YouTube'){
+
+            embed.push(`
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/${key}" title="${name}" class="embed hide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+          `)
+
+            dots.push(`
+              <span class="dot">${idx + 1}</span>
+            `)
+          }
+        })
+
+
+        var content2=`
+        ${embed.join('')}
+        <br/>
+
+        <div class="dots">${dots.join('')}</div>
+
+        `
+        overlayContent.innerHTML = content+content2;
+        activeSlide=0;
+        showVideos();
+      }else{
+        overlayContent.innerHTML = content+`<center><h1 class="no-results">No Results Found</h1></center>`
+      }
+    }
+  })
+}
+
+//===================================
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+
+
+
+
+
+
+//============================================================================================================
         form1.addEventListener('submit', (e) => {
                  e.preventDefault();
 
@@ -397,91 +406,6 @@ function getColor(vote) {
 
 
 
-//--------------------------------------genre list-------------------------------------------------------
-function gen(){
-const genres =
-   [
-    {
-      "id": 28,
-      "name": "Action"
-    },
-    {
-      "id": 12,
-      "name": "Adventure"
-    },
-    {
-      "id": 16,
-      "name": "Animation"
-    },
-    {
-      "id": 35,
-      "name": "Comedy"
-    },
-    {
-      "id": 80,
-      "name": "Crime"
-    },
-    {
-      "id": 99,
-      "name": "Documentary"
-    },
-    {
-      "id": 18,
-      "name": "Drama"
-    },
-    {
-      "id": 10751,
-      "name": "Family"
-    },
-    {
-      "id": 14,
-      "name": "Fantasy"
-    },
-    {
-      "id": 36,
-      "name": "History"
-    },
-    {
-      "id": 27,
-      "name": "Horror"
-    },
-    {
-      "id": 10402,
-      "name": "Music"
-    },
-    {
-      "id": 9648,
-      "name": "Mystery"
-    },
-    {
-      "id": 10749,
-      "name": "Romance"
-    },
-    {
-      "id": 878,
-      "name": "Science Fiction"
-    },
-    {
-      "id": 10770,
-      "name": "TV Movie"
-    },
-    {
-      "id": 53,
-      "name": "Thriller"
-    },
-    {
-      "id": 10752,
-      "name": "War"
-    },
-    {
-      "id": 37,
-      "name": "Western"
-    }
-  ]
-
-console.log(genres)
-//document.getElementById(genre);
-}
 //---------------------------------------------------||-----------------------------
 //for click it will load page
 //window.onload = function() {
@@ -493,14 +417,14 @@ console.log(genres)
 prev.addEventListener('click', () => {
   if(prevPage > 0){
     pageCall(prevPage);
-    form.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
+    form1.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
   }
 })
 
 next.addEventListener('click', () => {
   if(nextPage <= totalPages){
     pageCall(nextPage);
-    form.scrollIntoView({block: "start", inline: "nearest"})
+    form1.scrollIntoView({block: "start", inline: "nearest"})
     //form.scrollIntoView({behavior : 'smooth'})
     //{block: "end", inline: "nearest"}
   }
