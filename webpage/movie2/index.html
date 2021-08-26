@@ -14,83 +14,98 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
-<body>
+<body >
 <header>
   <form   id="form1">
-    <nav>
-      <div class="navbar">
-        <i class='bx bx-menu'></i>
-        <div class="logo"><a href="#">MovieWorld</a></div>
-        <div class="nav-links">
-          <div class="sidebar-logo">
-            <span class="logo-name">MovieWorld</span>
-            <i class='bx bx-x' ></i>
-          </div>
-          <ul class="links">
-            <li><a href="index.html" >HOME</a></li>
-            <li><a href="#" id="trending">Trending</a></li>
-            <li>
-              <a href="#">Languages</a>
-              <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
-              <ul class="htmlCss-sub-menu sub-menu">
-                <li><a href="#" id="telugu" >Telugu</a></li>
-                <li><a onClick=getMovies(TAMIL_URL) href="#">Tamil</a></li>
-                <li><a href="#" id="hindi">Hindi</a></li>
-                <li><a href="#" id="english" >English</a></li>
-                <li><a href="#" id="kannada" >Kannada</a></li>
-                <li><a href="#" id="malayalam" >Malayalam</a></li>
-                <li class="more">
-                  <span><a href="#">More</a>
-                  <i class='bx bxs-chevron-right arrow more-arrow'></i>
-                </span>
-                  <ul class="more-sub-menu sub-menu">
-                    <li><a href="#">Will Update</a></li>
-                    <li><a href="#">Will Update</a></li>
-                    <li><a href="#">Will Update</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-                  <li>
-                    <a href="#">Genres</a>
-                    <i class='bx bxs-chevron-down js-arrow arrow '></i>
-                    <ul class="js-sub-menu sub-menu">
-                      <li><a href="#">Will Update</a></li>
-                      <li><a href="#">Will Update</a></li>
-      
-                    </ul>
-                  </li>
+                    <nav>
+                      <div class="navbar">
+                        <i class='bx bx-menu'></i>
+                        <div class="logo"><a href="#">MovieWorld</a></div>
+                        <div class="nav-links">
+                          <div class="sidebar-logo">
+                            <span class="logo-name">MovieWorld</span>
+                            <i class='bx bx-x' ></i>
+                          </div>
+                          <ul class="links">
+                            <li><a href="menu.html" >HOME</a></li>
+                            <li><a href="#" id="trending">Trending</a></li>
+                            <li>
+                              <a href="#">Languages</a>
+                              <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                              <ul class="htmlCss-sub-menu sub-menu">
+                                <li><a href="#" id="telugu" >Telugu</a></li>
+                                <li><a href="#" id="tamil" >Tamil</a></li>
+                                <li><a href="#" id="hindi">Hindi</a></li>
+                                <li><a href="#" id="english" >English</a></li>
+                                <li><a href="#" id="kannada" >Kannada</a></li>
+                                <li><a href="#" id="malayalam" >Malayalam</a></li>
+                                <li class="more">
+                                  <span><a href="#">More</a>
+                                  <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                                </span>
+                                  <ul class="more-sub-menu sub-menu">
+                                    <li><a href="#">Will Update</a></li>
+                                    <li><a href="#">Will Update</a></li>
+                                    <li><a href="#">Will Update</a></li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                                  <li>
+                                    <a href="#">Genres</a>
+                                    <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                                    <ul class="js-sub-menu sub-menu">
+                                      <li><a href="#">Will Update</a></li>
+                                      <li><a href="#">Will Update</a></li>
 
-             <li>
-              <a href="#">More</a>
-              <i class='bx bxs-chevron-down js-arrow arrow '></i>
-              <ul class="js-sub-menu sub-menu">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
+                                    </ul>
+                                  </li>
 
-              </ul>
-            </li>
+                             <li>
+                              <a href="#">More</a>
+                              <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                              <ul class="js-sub-menu sub-menu">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+
+                              </ul>
+                            </li>
 
 
 
-          </ul>
-        </div>
-              <div class="search-box" >
-                <i class='bx bx-search'></i>
-                <div class="input-box">
-                  <input type="text"  id="search279" placeholder="Search...">
+                          </ul>
+                        </div>
+                              <div class="search-box" >
+                                <i class='bx bx-search'></i>
+                                <div class="input-box">
+                                  <input type="text"  id="search279" placeholder="Search...">
 
-                </div>
+                                </div>
 
-              </div>
+                              </div>
 
-      </div>
-    </nav>
-  </form><br><br><br>
+                      </div>
+
+                    </nav>
+
+  </form></header><br><br><br><br>
+
+
   <div id="form"><main id="main"></main></div>
-</header>
 
+            <div id="tags"></div>
+            <div id="myNav" class="overlay">
+
+                    <!-- Button to close the overlay navigation -->
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                    <!-- Overlay content -->
+                    <div class="overlay-content" id="overlay-content"></div>
+
+
+
+                  </div>
 
 <div class="pagination">
         <div class="page" id="prev" href="#">Previous Page</div>
@@ -98,7 +113,9 @@
         <div class="page" id="next" href="#" >Next Page</div>
 
     </div>
-  <!--<script src="#"></script>-->
+  <!--<script src="menu.js"></script>-->
   <script src="script.js"></script>
 </body>
 </html>
+<!--transform: translate(-100%, -100%);
+  -ms-transform: translate(-50%, -50%);-->
