@@ -169,15 +169,30 @@ nav .navbar .links li:hover .js-sub-menu{
 .search-box .input-box input{
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   border-radius: 40px;
   transform: translate(-50%, -50%);
   height: 35px;
-  width: 280px;
+  width: 180px;
   outline: none;
   padding: 0 15px;
   font-size: 16px;
   border: none;
+  margin-left:0;
+}
+.search-box .input-box button{
+
+margin-top:15px;
+border-radius: 20px;
+height: 32px;
+  width: 50px;
+  margin-left:200px;
+  border-width:0;
+  outline:none;
+  pointer:cursor;
+  top:65px;
+
+
 }
 .navbar .nav-links .sidebar-logo{
   display: none;
