@@ -53,13 +53,14 @@ Steps to Protect user's environment from azure Cosmos DB if Cosmos DB hacked and
 <li>select the cosmos DB account which user’s data and applications running in. </li>
 
 <li>In the left side menu, search for name “Keys", click on it. </li>
+  <img src="1.png">
 
 <li>There user can able to see the primary and secondary keys and end of the both keys ,3 dots (like this ...) are appeared. </li>
 
   <li>click on three (3) dots, it will show [regenerate Prime key] or [regenerate Secondary key (not needed now)] then click on it. </li>
-
+<img src="2.png">
 <li>it prompts whether regenerate the key or not, go with yes, key will generate within a couple of moments based on size of database in Cosmos DB.</li> </ol>
-
+<img src="5.png">
 <h5>Step2: Reduce the network access</h5> 
 
  
@@ -73,13 +74,14 @@ If user do not want to replace the primary and secondary keys, make sure user’
 <b>Network Access to the Cosmos DB can be reduced in multiple ways: <b>
 <ul>
 <li>Creating the Firewall Rules which can be specified to particular/exact IP addresses. These IP addresses can only access to the Cosmos DB Account. </li>
-
+<img src="6.png">
 <li>By creating virtual networks, only the resources present within the virtual network can access the database in Cosmos DB of the User. </li>
 
-<li>while creating the security system(firewall) and virtual networks, on the exceptions one of it, do not select “Accept connections from within public Azure datacenters” </li></ul>
+<li>while creating the security system(firewall) and virtual networks, on the exceptions one of it, do not select “Accept connections from within public Azure datacenters” <img src="8.png"></li></ul>
 
 <p>This ensures that user database is not exposed to the Azure IP range. Azure IP addresses should be treated as public addresses because those addresses can be obtained by anyone, including malicious users. 
 </p>
+  <img src="7.png">
 <h2>Long Term recommendations </h2>
 <ul>
 <li>Using Role Based Access Control (RBAC): - sharing the primary keys to all is always insecure so by using RBAC only restricted user can get primary keys. </li>
