@@ -13,7 +13,7 @@ They want to deny the creation of virtual machines and virtual networks so that 
   <br><img src="1.png"><br>
   <li>In the search bar, search with not allowed resources, then results came, choose "Not Allowed Resource Types"
 </li><br>
-  <img src="2.png">
+  <img src="2.png"><br>
   <li>Then, click on the ASSIGN button to implement the rules that the customer needs.
 </li><br>
   
