@@ -9,15 +9,16 @@ They want to deny the creation of virtual machines and virtual networks so that 
 <p>Implementing the policies which are related to virtual networks and virtual machines that are not to allow to creation.</p><br>
 <h3>Steps to Implement the Solution</h4>
 <ol>
-<li>type "Policy" in the azure search bar. in the sidebar, under AUthoring Section, click on Definitions</li>
-  <br><img src="">
-  <li>in the search bar, search with not allowed resources, then results came, choose "Not Allowed Resource Types"
+<li>Type "Policy" in the azure search bar. in the sidebar, under AUthoring Section, click on Definitions</li><br>
+  <br><img src="1.png"><br>
+  <li>In the search bar, search with not allowed resources, then results came, choose "Not Allowed Resource Types"
 </li><br>
-  <img src="">
-  <li>then, click on the ASSIGN button to implement the rules that the customer needs.
+  <img src="2.png">
+  <li>Then, click on the ASSIGN button to implement the rules that the customer needs.
 </li><br>
-  <li>under the section of BASICS, select the SCOPE which is the subscription for the Customer, under this particular subscription, no one creates the resource which the user wants to deny to create.<br></li>
-  <br><li>under the section of PARAMETERS ,select the resources that user want to deny to create ,here virtual networks and virtual machines,choose these two and create the policy ,it take around five to ten minutes to apply the creted policy to the subscription</li><br>
+  
+  <li>Under the section of BASICS, select the SCOPE which is the subscription for the Customer, under this particular subscription, no one creates the resource which the user wants to deny to create.<br></li><img src="3.png"><br>
+  <br><li>Under the section of PARAMETERS ,select the resources that user want to deny to create ,here virtual networks and virtual machines,choose these two and create the policy ,it take around five to ten minutes to apply the creted policy to the subscription</li><br><img src="4.png"><br><img src="5.png"><br>
 
-
+<li>So ,if the someone try to create virual networks or virtual machine in the subscription ,it deny to complete it and its againest policies</li>
 </ol>
