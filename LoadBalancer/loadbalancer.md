@@ -7,6 +7,8 @@ what are other implementations should be taken for application</p>
 <p>In order to avoid this servers down issues,if we design to share/balance the traffic to each virtual machine ,there is high possibility that servers will run in good health</p>
 <p>Even the servers increases to manage traffic ,for all servers need a guide that how to distribute the traffic among them.</p>
 <p>So Load balancing serices are the solution and for this usecase load balancer is enough </p>
+
+<p>**NOTE** if no.of virual machines hosted an application more than one ,make sure that they are part of availability set or virtual machine scale set in case of basic Load Balancer</p>
 <h3>Basic Pre requisites that need to build this Structure in azure </h3>
 <ol>
 <li>Virtual machines to host an application and are need to be part of availability set or virtual machine scale set.</li>
@@ -28,6 +30,6 @@ what are other implementations should be taken for application</p>
 <li>Click on load balancer,in left side ,under SETTINGS ,there are four options likely 1.Frontend IP configuration 2.Backend Pools 3.Health Probes 4.Load Balancing Rules, </li><br><img src="3.png"><br><br>
 <li>Click on frontend ip config, and add public Ip address.<br><img src="4.png"></li><br>
 <li>Under Backend Pool,add the two virtual machines which are hosted for an application</li>  <br><img src="6.png"><br>
-<li>Under Health Probe ,configure the details as well</li><br><img src="7.png"><br>
+<li>Under Health Probe ,configure the details as well</li><br><img src="5.png"><br>
 <li>Add balancing rules ,so that requests will split accross the virtual machines</li><br><img src="7.png"><br>
 </ol>
