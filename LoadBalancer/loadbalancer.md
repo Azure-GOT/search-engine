@@ -1,6 +1,6 @@
 #use case
 <h1>Use Case Scenario</h1>
-<p>customer has onpremise data center and azure virtual network ,in virtual network ,there are two virtual machines hosting the same Application. Company employees established site -site VPN connection.so they actually connect the virtual machines using privite ip address.now they want publish the application 
+<p>Customer has On-Premise data center and azure virtual network ,in virtual network ,there are two virtual machines hosting the same Application. Company employees established site -site VPN connection.so they actually connect the virtual machines using privite ip address.now they want publish the application 
 what are other implementations should be taken for application</p>
 <h2>Solution</h2>
 <p>Customer want to release the application to public so it may face traffic issues leads to servers down .that is one of virtual machine or both may go down and will not work properly .</p>
