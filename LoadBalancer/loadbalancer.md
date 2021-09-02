@@ -19,3 +19,15 @@ what are other implementations should be taken for application</p><br>
 <li>backend pool contains virtual machines .we need to configure the virtual machines corresponding to the application in backend pool. </li><br>
 <li>adding the health probe will help the load balancer understand if virtual machines are health(like heart beat)  </li><br>
 <li>load balancing rules helps when the request comes from the user to the load balncer,the request will be routed across the virtual machines (balancing the traffic),so when multiple requests comes ,then these requests will split across the Virtual machines which are part of backend pool.</li></ol>
+<br>
+<h2>Steps to Implement the Solution In azure</h2>
+<ol>
+<li>Navigate to load balancer option in azure portal by searching in search bar or its availble in market place. </li>
+<li>Enter the relevent details based on the requirement and create the load balancer.</li>  
+<br><img src="1.png"><br><img src="2.png"><br>
+<li>Click on load balancer,in left side ,under SETTINGS ,there are four options likely 1.Frontend IP configuration 2.Backend Pools 3.Health Probes 4.Load Balancing Rules, </li><br><img src="3.png"><br><br>
+<li>Click on frontend ip config, and add public Ip address.<br><img src="4.png"></li><br>
+<li>Under Backend Pool,add the two virtual machines which are hosted for an application</li>  <br><img src="6.png"><br>
+<li>Under Health Probe ,configure the details as well</li><br><img src="7.png"><br>
+<li>add balancing rules ,so that requests will split accross the virtual machines</li><br><img src="7.png"><br>
+</ol>
