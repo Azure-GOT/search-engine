@@ -3,8 +3,8 @@
 <p>customer has onpremise data center and azure virtual network ,in virtual network ,there are two virtual machines hosting the same Application. Company employees established site -site VPN connection.so they actually connect the virtual machines using privite ip address.now they want publish the application 
 what are other implementations should be taken for application</p><br>
 <h2>Solution</h2>
-<p>Customer want to release the application to public so it may face traffic issues leads to servers down .that is one of virtual machine or both may go down and will not work properly .</p><br>
-<p>in order to avoid this servers down issues,if we design to share/balance the traffic to each virtual machine ,there is high possibility that servers will run in good health</p><br>
+<p>Customer want to release the application to public so it may face traffic issues leads to servers down .that is one of virtual machine or both may go down and will not work properly .</p>
+<p>in order to avoid this servers down issues,if we design to share/balance the traffic to each virtual machine ,there is high possibility that servers will run in good health</p>
 <p>even the servers increases to manage traffic ,for all servers need a guide that how to distribute the traffic among them.</p>
 <p>So Load balancing serices are the solution and for this usecase load balancer is enough </p>
 <h3>basic Pre requisites that need to build this Structure in azure </h3>
