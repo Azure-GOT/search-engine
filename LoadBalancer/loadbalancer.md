@@ -11,7 +11,7 @@ what are other implementations should be taken for application</p><br>
 <ol>
 <li>virtual machines to host an application and are need to be part of availability set or virtual machine scale set.</li>
 <li>azure Load Balncer ,backend pool,health probe,load balancing rules,public ip address </li>
-<li>public ip address is assigned to azure load balancer not for virtual machines <li>
+<li>public ip address is assigned to azure load balancer not for virtual machines </li>
 </ol>
 <h3>Internal Process after implentation and how application works</h3>
 <ol>
