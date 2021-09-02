@@ -14,7 +14,8 @@ what are other implementations should be taken for application</p><br>
 <li>public ip address is assigned to azure load balancer not for virtual machines <li>
 </ol>
 <h3>Internal Process after implentation and how application works</h3>
-<b>create public IP address,azure load balancer and then need to create backend pool and need to add health probe</b>
-<p>backend pool contains virtual machines .we need to configure the virtual machines corresponding to the application in backend pool. </p><br>
-<p>adding the helth probe will help the load balancer understand if virtual machines are health(like heart beat) </p><br>
-<p>load balancing rules helps when the request comes from the user to the load balncer,the request will be routed across the virtual machines (balancing the traffic),so when multiple requests comes ,then these requests will split across the Virtual machines which are part of backend pool.</p>
+<ol>
+<li>create public IP address,azure load balancer and then need to create backend pool and need to add health probe</li>
+<li>backend pool contains virtual machines .we need to configure the virtual machines corresponding to the application in backend pool. </li><br>
+<li>adding the helth probe will help the load balancer understand if virtual machines are health(like heart beat) </li><br>
+<li>load balancing rules helps when the request comes from the user to the load balncer,the request will be routed across the virtual machines (balancing the traffic),so when multiple requests comes ,then these requests will split across the Virtual machines which are part of backend pool.</li></ol>
