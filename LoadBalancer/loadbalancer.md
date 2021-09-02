@@ -8,7 +8,7 @@ what are other implementations should be taken for application</p>
 <p>Even the servers increases to manage traffic ,for all servers need a guide that how to distribute the traffic among them.</p>
 <p>So Load balancing serices are the solution and for this usecase load balancer is enough </p>
 
-<p>**NOTE** if no.of virtual machines hosted an application more than one ,make sure that they are in part of availability set or virtual machine scale set in case of basic Load Balancer</p>
+<p>**NOTE** if no.of virtual machines hosted an application more than one ,make sure that they are in part of availability set or virtual machine scale set in case of basic Load Balancer, not required in case of Standard Load Balancer.</p>
 <h3>Basic Pre requisites that need to build this Structure in azure </h3>
 <ol>
 <li>Virtual machines to host an application and are need to be part of availability set or virtual machine scale set.</li>
