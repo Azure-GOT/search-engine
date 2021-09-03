@@ -18,9 +18,11 @@
 <p>steps like Flow Chart that to decide the which load balncing rule that support for your application.</p>
 <h3><b>when to chose </b></h3>
 <h4>Load Balancer</h4>
-<p>if the application is not web application that is no HTTP/HTTPS requests needed, and deployed in regional basis irrespective of application based on internet facing :-choose Load Balancer.</p>
+<p>if  Your application is not web application that is no HTTP/HTTPS requests needed, and deployed in regional basis irrespective of application based on internet facing :-choose Load Balancer.</p>
 <h4>Application Gateway</h4>
-<p>if the application is web application that has HTTP/HTTPS requests ,not required to deploy in multiple regions/global and application wants to be internet facing or if the application is web application that  has HTTP/HTTPS requests  and no need of  internet facing :-choose application Gateway </p>
+<p>if  Your application is web application that has HTTP/HTTPS requests ,not required to deploy in multiple regions/global and application wants to be internet facing or if the application is web application that  has HTTP/HTTPS requests  and no need of  internet facing :-choose application Gateway </p>
 <h4>Traffic Manager</h4>
-<p>if the application is not web application that is no HTTP/HTTPS requests needed, and application wants to be internet facing and need to deploy in multiple regions/global :- choose Traffic Manager and Azure Load Balncer </p>
+<p>if  Your application is not web application that is no HTTP/HTTPS requests needed, and application wants to be internet facing and need to deploy in multiple regions/global :- choose Traffic Manager and Azure Load Balancer </p>
+<h4>AZure Front Door</h4>
+<p>if Your  application is web application that has HTTP/HTTPS requests , required to deploy in multiple regions/global and application wants to be internet facing and hosting as PaaS :- choose azure front Door</p>
 
