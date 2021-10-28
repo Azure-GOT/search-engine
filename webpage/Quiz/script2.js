@@ -1,6 +1,6 @@
 var questions = [{
     question: "1. what is the Capital of India",
-    choices: ["Hyderabad", "New Delhi", "Sydney", "Mumbai"],
+    choices: ["Hyderabad", "Sydney", "New Delhi", "Mumbai"],
     correctAnswer: 2
 }, {
     question: "2. How to empty an array in JavaScript?",
