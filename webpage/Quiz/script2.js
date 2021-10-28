@@ -46,7 +46,7 @@ var viewingAns = 0;
 var correctAnswers = 0;
 var quizOver = false;
 var iSelectedAnswer = [];
-	var c=180;
+	var c=600;
 	var t;
 $(document).ready(function ()
 {
@@ -170,7 +170,7 @@ function timedCount()
 					return false;
 
 		}
-
+//==========================================================================
 		/*if(c == 0 )
 		{
 			if (!quizOver)
@@ -205,7 +205,9 @@ function timedCount()
 				displayCurrentQuestion();
 				hideScore();
 			}
-		}	*/
+		}*/
+
+		//====================================================
 		c = c - 1;
 		t = setTimeout(function()
 		{
@@ -218,7 +220,7 @@ function timedCount()
 function displayCurrentQuestion()
 {
 
-	if(c == 185) { c = 180; timedCount(); }
+	if(c == 185) { c = 600; timedCount(); }
     //console.log("In display current Question");
     var question = questions[currentQuestion].question;
     var questionClass = $(document).find(".quizContainer > .question");
