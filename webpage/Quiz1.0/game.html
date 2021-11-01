@@ -52,8 +52,8 @@
 
         <br>
         <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
-            <button id="preButton" class=" btn btn-primary d-flex align-items-center btn-danger" type="button"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button>
             <button id="nextButton" class=" btn btn-primary border-success align-items-center btn-success" type="button">Next<i class="fa fa-angle-right ml-2"></i></button>
+            <button id="preButton" class=" btn btn-primary d-flex align-items-center btn-danger" type="button"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button>
             <button class=" btn btn-primary d-flex align-items-center btn-danger"  onclick="myFunction10()" type="button"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;Home</button>
 
         </div>
@@ -71,58 +71,7 @@
         function myFunction10() {
         location.assign('index.html');
         }
-
-        var no_box = document
-            .querySelector('.no-box');
-
-        var i = 1;
-
-        function prev() {
-
-            // Start position
-            if (i == 1) {
-
-                // Add disabled attribute on
-                // prev button
-                document.getElementsByClassName(
-                        'prev').disabled = true;
-
-                // Remove disabled attribute
-                // from next button
-                document.getElementsByClassName(
-                        'next').disabled = false;
-            } else {
-                i--;
-                return setNo();
-            }
-        }
-
-        function next() {
-
-            // End position
-            if (i == 5) {
-
-                // Add disabled attribute on
-                // next button
-                document.getElementsByClassName(
-                        'next').disabled = true;
-
-                // Remove disabled attribute
-                // from prev button
-                document.getElementsByClassName(
-                        'prev').disabled = false;
-            } else {
-                i++;
-                return setNo();
-            }
-        }
-
-        function setNo() {
-
-            // Change innerhtml
-            return no_box.innerHTML = i;
-        }
-
+ 
     </script>
 
 </html>
