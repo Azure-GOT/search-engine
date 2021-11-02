@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" type ="text/css" href="game.css">
+</head>
+<body>
+<ul>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html">Home</a></li>
+
+      </ul>
+    <div class="container">
+        
+        <div id ="game" class ="justify-center flex-column ">
+            <div id ="hud">
+                <div id = "hud-item">
+                    <p id="progresstext" class = "hud-prefix">Question</p>
+                    <div id ="progressbar" style="display:none;">
+                        <div id="progressbarfull"></div><br>
+                    </div>
+                </div>
+
+                <div id = "hud-item " style="display:none;">
+                    <p class = "hud-prefix">Score</p>
+                    <h1 class = "hud-main-text" id ="score" style="font-size: 5rem;">0</h1>
+                </div>
+
+            </div>
+
+            <h3 id="question">What?</h3>
+
+            <div class="choice-container ">
+                <!--p class = "choice-prefix">A</p-->
+                <p class ="choice-text" data-number="1"> Choice 1</p>
+            </div>
+
+            <div class="choice-container">
+                <!--p class = "choice-prefix">B</p-->
+                <p class ="choice-text" data-number="2">Choice 2</p>
+            </div>
+
+            <div class="choice-container">
+                <!--p class = "choice-prefix">C</p-->
+                <p class ="choice-text" data-number="3">Choice 3</p>
+            </div>
+
+            <div class="choice-container">
+                <!--p class = "choice-prefix">D</p-->
+                <p class ="choice-text" data-number="4">Choice 4</p>
+            </div>
+
+
+                    <br>
+                    <div class=" d-flex flex-row justify-content-between align-items-center bg-white" >
+                        <button id="nextButton" class=" btn btn-primary border-success align-items-center btn-success mt-3" style="font-size:13px;" type="button">Next<i class="fa fa-angle-right ml-2"></i></button>
+                        <button id="preButton" class=" btn btn-primary  border-success align-items-center btn-danger mt-3" style="font-size:13px;" type="button"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button>
+                        <button class=" btn btn-primary border-success align-items-center btn-success mt-3"  style="font-size:13px;" onclick="myFunction10()" type="button"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;Home</button>
+                        <button type="button" class="btn btn-primary border-success align-items-center mt-3" style="font-size:13px;" data-toggle="modal" data-target="#exampleModalCenter">Restart</button>
+                    </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Confirmation To Quit</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                Do you Want Quit the Quiz?
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                <button type="button" id="restart" class="btn btn-primary">Yes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+
+
+                                        <!--div id="id_confrmdiv">confirmation
+                                            <button id="id_truebtn">Yes</button>
+                                            <button id="id_falsebtn">No</button>
+                                        </div-->
+
+
+
+        </div>
+
+    </div>
+<div class ="footer">
+        <p class ="flex-center flex-column" style="color: aliceblue; font-size: medium;">Made by :  ****Footer section****</p>
+    </div>
+
+
+
+</body>
+
+
+    <script src="game.js"></script>
+    <script>
+
+        function myFunction10() {
+        location.assign('index.html');
+        }
+
+    </script>
+
+</html>
